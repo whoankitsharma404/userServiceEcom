@@ -1,0 +1,316 @@
+<!--<!doctype html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"-->
+<!--          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"-->
+<!--          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">-->
+<!--    <title>Document</title>-->
+<!--</head>-->
+<!--<body>-->
+
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light" >-->
+<!--    <div class="container-fluid">-->
+<!--        <a class="navbar-brand" href="#">-->
+<!--            <img th:src="@{/images/logo.png}"  src="../static/images/logo.png" width="auto" height="40" class="d-inline-block align-top" alt=""/>-->
+<!--        </a>-->
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+
+<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav mr-auto"></ul>-->
+<!--            <ul class="navbar-nav">-->
+<!--                <li class="nav-item active">-->
+<!--                    <a class="nav-link" th:href="@{/}" href="#">home</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item active">-->
+<!--                    <a class="nav-link" th:href="@{/shop}" href="#">shop</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item active">-->
+<!--                    <a class="nav-link" href="#">Sign Up</a>-->
+<!--                </li>-->
+
+<!--            </ul>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+<!--<div class="container">-->
+<!--    <div class="col-sm-6">-->
+<!--        <h3 style="margin-top: 10px">Sign Up Now</h3>-->
+<!--        <p>Please fill out this to register</p>-->
+<!--        <form th:action="@{/register}" th:object="${user}" method="post">-->
+<!--            <div class="form-group">-->
+<!--                <label for="firstName">First Name</label>-->
+<!--                <input type="text" name="firstName" id="firstName" required placeholder="Your Firstname" class="form-control form-control-lg">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="lastName">Last Name</label>-->
+<!--                <input type="text" name="lastName" id="lastName" required placeholder="Your Lastname" class="form-control form-control-lg">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="email">Email address</label>-->
+<!--                <input type="email" class="form-control form-control-lg" required minlength="6" placeholder="Email" name="email" id="email"-->
+<!--                       aria-describedby="emailHelp">-->
+<!--                <small id="emailHelp" class="form-text text-muted">We'll never share your email with-->
+<!--                    anyone else.</small>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="password">Password</label>-->
+<!--                <input type="password" class="form-control form-control-lg" required placeholder="Password" name="password"-->
+<!--                       id="password">-->
+<!--            </div>-->
+
+<!--            <input type="submit" value="Register" class="btn btn-primary btn-block">-->
+<!--            <span style="margin-top: 10px">Already have an account <a class="linkControl" href="./login.html"-->
+<!--                                                                      th:href="@{/login}">Login here</a></span>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Sign Up</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+    .navbar-custom {
+            background-color:#091E3E; /* Flipkart's primary blue color */
+            border-bottom: 1px solid #1a5fb4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar-custom .navbar-brand img {
+            width: 80px; /* Adjust logo size */
+            height: auto;
+
+        }
+        .navbar-custom .navbar-nav .nav-link {
+            color: #fff;
+            font-weight: 500;
+            padding: 8px 15px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar-custom .navbar-nav .nav-link:hover {
+            background-color: #1a5fb4;
+            border-radius: 5px;
+        }
+        .navbar-custom .navbar-nav .nav-item.active .nav-link {
+            background-color: #1a5fb4;
+            border-radius: 5px;
+        }
+        .navbar-custom .search-bar {
+            width: 500px;
+            margin-right: 15px;
+        }
+        .navbar-custom .search-bar input[type="text"] {
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+            height: 40px;
+            width: 100%;
+        }
+        .navbar-custom .search-bar .input-group-append .btn {
+            background-color: #ffeb3b;
+            border-radius: 0;
+            border: none;
+            height: 40px;
+            font-weight: bold;
+        }
+        .navbar-custom .navbar-toggler {
+            border-color: #fff;
+        }
+        .navbar-custom .navbar-toggler-icon {
+            color: #fff;
+        }
+        .navbar-custom .dropdown-menu {
+            background-color: #2874f0;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-custom .dropdown-menu .dropdown-item {
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        .navbar-custom .dropdown-menu .dropdown-item:hover {
+            background-color: #1a5fb4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: #2874f0;
+            border-color: #2874f0;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .linkControl {
+            color: #2874f0;
+            font-weight: bold;
+        }
+
+        .linkControl:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <h2>SHOP-NOW</h2>
+            <!--            <img th:src="@{/images/logo.png}" src="../static/images/logo.png" alt="Logo"/>-->
+            <!--            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/online-shop-ecommerce-logo-app-icon-logo-design-template-910c781293690546d77a3828f9e901ee_screen.jpg?ts=1611442808"/>-->
+        </a>
+
+<!--        <form class="form-inline search-bar">-->
+<!--            <div class="input-group">-->
+<!--                <input type="text" class="form-control" placeholder="Search for products, brands and more">-->
+<!--                <div class="input-group-append">-->
+<!--                    <button class="btn btn-warning" type="button"><i class="fas fa-search"></i></button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}" href="#">Login</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Notification Preferences</a>
+                        <a class="dropdown-item" href="#">24x7 Customer Care</a>
+                        <a class="dropdown-item" href="#">Advertise</a>
+                        <a class="dropdown-item" href="#">Download App</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/cart}" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}" href="#">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link" th:text="${cartCount}">0</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h3>Sign Up Now</h3>
+    <p>Please fill out this form to register</p>
+    <form th:action="@{/register}" th:object="${user}" method="post">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" required placeholder="Your First Name"
+                   class="form-control form-control-lg">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" required placeholder="Your Last Name"
+                   class="form-control form-control-lg">
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control form-control-lg" required minlength="6" placeholder="Email"
+                   name="email" id="email" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control form-control-lg" required placeholder="Password"
+                   name="password" id="password">
+        </div>
+
+        <input type="submit" value="Register" class="btn btn-primary btn-block">
+        <span style="margin-top: 10px">Already have an account? <a class="linkControl" th:href="@{/login}">Login here</a></span>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>
